@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Website</title>
+    <link rel="stylesheet" href="CSS.css">
+    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Heart.png">
+</head>
+
+<body>
+
+<div id="loadingScreen">
+    <div id="loadingTitle">Our Website 💕</div>
+    <div id="loadingBarOuter"><div id="loadingBarInner"></div>
+</div>
+
+<div id="loadingText">Loading...</div>
+</div>
+
+<div class="menu-bar"> 
+    <div class="menu-nav">
+        <div class="menu-item active" onclick="showPage('home', this)">Home</div>
+        <div class="menu-item" onclick="showPage('pictures', this)">Pictures</div>
+        <div class="menu-item" onclick="showPage('themes', this)">Themes</div>
+        <div class="menu-item" onclick="showPage('achievementsPage', this)">Achievements</div>
+        <div class="menu-item" onclick="showPage('stats', this)">Stats</div>
+        <div class="menu-item" onclick="showPage('extras', this)">Extras/Games</div>
+    </div>
+</div>
+    
+<div id="winterSnow"></div>
+<div id="sunMoonContainer"></div>
+<div class="rain-container" id="rainContainer"></div>
+    
+<div id="stars"></div>
+    
+<div class="music-edge" onclick="toggleMusic()">
+    <span class="arrow">›</span>
+</div>
+
+<div class="page active" id="home">
+    <div class="time-box">
+        <h1>it all started on 💕October 29th... </h1>
+        <h1>And it's been...</h1>
+        <div class="time-display">
+            <div class="time-value" id="timeValue">0</div>
+        </div>
+        <p id="timeLabel">months</p>
+        <div class="time-arrows">
+            <button onclick="prevTime()">⬅</button>
+            <button onclick="nextTime()">➡</button>
+        </div>
+    </div>
+</div>
+
+<div class="page" id="ribbons">
+    <div class="ribbons-container">
+        <div class="ribbon-box">
+            <h1>Nick's Ribbions</h1>
+            <img src="nickribbons.png" alt="Nick's Ribbons">
+        </div>
+        <div class="ribbon-box">
+            <h1>Jay's Ribbions</h1>
+            <img src="jayribbons.png" alt="Jay's Ribbons">
+        </div>
+    </div>
+</div>
+
+<div class="study-page page" id="studyPage">
+    <h1>Study Mode</h1>
+    <div class="study-grid">
+<div class="study-calculator">
+    <input id="calcDisplay" disabled>
+    
+    <div class="calc-grid">
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('/')">÷</button>
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('*')">×</button>
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('-')">−</button>
+        <button onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="press('+')">+</button>
+        <button onclick="clearCalc()" class="wide">Clear</button>
+    </div>
+</div>
+
+    <div class="todo-section">
+    <h2>To Do List</h2>
+    <div class="todo-input-row">
+        <input type="text"id="todoInput"placeholder="Add a task...">
+        <button onclick="addTodo()">Add</button>
+    </div>
+    <div id="todoList"></div>
+</div>
+        <div class="study-box glass">
+            <h2>Notes</h2>
+            <textarea id="studyNotes" placeholder="Write your notes here..."></textarea>
+            <button onclick="saveNotes()">Save Notes</button>
+        </div>
+    </div>
+</div>
+
+<div class="page" id="themes">
+    <div class="themes-grid">
+        
+        <div class="theme-card default-theme" onclick="setTheme('default')">
+            <span>Default</span>
+        </div>
+        
+        <div class="theme-card ocean-theme" onclick="setTheme('ocean')">
+            <span>Ocean</span>
+        </div>
+        
+        <div class="theme-card sunrise-theme" onclick="setTheme('sunrise')">
+            <span>Sunrise</span>
+        </div>
+
+        <div class="theme-card forest-theme" onclick="setTheme('forest')">
+            <span>Forest</span>
+        </div>
+
+        <div class="theme-card heaven-theme" onclick="setTheme('heaven')">
+            <span>Heaven</span>
+        </div>
+
+        <div class="theme-card midnight-theme" onclick="setTheme('midnight')">
+            <span>Midnight</span>
+        </div>
+
+        <div class="theme-card hearts-theme" onclick="setTheme('hearts')">
+            <span>Hearts</span>
+        </div>
+
+        <div class="theme-card cotton-theme" onclick="setTheme('cottoncandy')">
+            <span>Cotton Candy</span>
+        </div>
+
+        <div class="theme-card rain-theme" onclick="setTheme('rain')">
+            <span>Rain</span>
+        </div>
+
+        <div class="theme-card galaxy-theme" onclick="setTheme('galaxy')">
+            <span>Galaxy</span>
+        </div>
+
+        <div class="theme-card burger-theme" onclick="setTheme('burger')">
+            <span>Burger</span>
+        </div>
+
+        <div class="theme-card sunmoon-theme" onclick="setTheme('sunmoon')">
+            <span>Sun & Moon</span>
+        </div>
+
+        <div class="theme-card fall-theme" onclick="setTheme('fall')">
+            <span>Fall</span>
+        </div>
+
+        <div class="theme-card winter-theme" onclick="setTheme('winter')">
+            <span>Winter</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="page" id="stats">
+    <div class="stats-page-box">
+        <h1>Relationship Stats</h1>
+        <div id="statsGrid" class="stats-grid"></div>
+    </div>
+</div>
+
+<div class="page" id="extras">
+    <div class="stats-page-box">
+        <h1>Extras & Games</h1>
+        <div class="themes-grid">
+            <div class="theme-card heaven-theme" onclick="openExtraPage('story')">
+                <span>Story</span>
+            </div>
+            <div class="theme-card heaven-theme" onclick="openExtraPage('timeline')">
+                <span>Timeline</span>
+            </div>
+            <div class="theme-card heaven-theme" onclick="openExtraPage('studyPage')">
+                <span>Study</span>
+            </div>
+            <div class="theme-card heaven-theme" onclick="openExtraPage('ribbons')">
+                <span>Ribbons</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="leafContainer"></div>
+
+<div class="music-panel" id="musicPanel">
+  <iframe style="border-radius:12px"
+    src="https://open.spotify.com/embed/playlist/16RH64ekFpEk0q0wSjO3ow"
+    width="100%"
+    height="100%"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
+</div>
+
+<div class="quote-box" id="quoteBox">
+    <p id="quoteText">Click me 💕</p>
+</div>
+    
+<div class="page" id="pictures">
+    <div class="grid" id="grid"></div>
+</div>
+
+<div class="page" id="timeline">
+    <div class="timeline-container" id="timelineContainer"></div>
+</div>
+
+<div class="secret-hint" onclick="openSecretInput()"></div>
+<div class="secret-overlay" id="secretOverlay">
+    <div class="secret-black-box"></div>
+    <div class="secret-input-box">
+        <p>Enter Code</p>
+        <input type="text" id="secretInput" placeholder="...">
+        <button onclick="checkSecret()">Enter</button>
+    </div>    
+    <button class="return-home-btn" id="returnHomeBtn" onclick="closeSecretInput()">
+        Return Home
+    </button>
+</div>
+
+<div class="overlay" id="overlay">
+    <img id="zoomImg" class="zoom-img" alt="Opened photo">
+
+    <div class="flip-panel" id="flipPanel">
+        <div class="flip-inner" id="flipInner">
+            <div class="face front">
+                <img id="frontImg" alt="Front photo">
+            </div>
+            <div class="face back" id="backText"></div>
+        </div>
+    </div>
+
+    <button class="back-btn" onclick="closeOverlay()">Back</button>
+</div>
+
+<div class="links-btn" onclick="toggleLinks()">Other Links</div>
+
+<div class="favorites-btn" onclick="toggleFavorites()">Favorites</div>
+    
+<div class="favorites-panel" id="favoritesPanel"></div>
+    
+<div class="links-panel" id="linksPanel">
+    <a href="https://docs.google.com/document/d/1_kb-ixfMsF37o0ll2jb56GUdggvlPlGAi-45zcaQKHs/edit?tab=t.0" target="_blank">My Writings</a>
+    <a href="https://docs.google.com/spreadsheets/d/1Qsp93zIw6wlPOMnkEWdn75EgyP91IRobf-jj6-oQV1A/edit?gid=0#gid=0" target="_blank">Cards</a>
+    <a href="https://farmgirlflowers.com/shop?sort_by=recommended&min_price=1&max_price=500" target="_blank">For Most Girls</a>
+</div>
+    
+<div class="page" id="story">
+    <div class="story-intro" id="storyIntro">
+        <h2>This is our story 💕</h2>
+        <button onclick="startStory()">Start</button>
+    </div>
+
+    <div class="story-box" id="storyBox" style="display:none;">
+        <div id="storyText">We're walking together in school...</div>
+
+        <div id="storyChoices">
+            <button onclick="choose(1)">Hold my hand</button>
+            <button onclick="choose(2)">Stay quiet</button>
+        </div>
+    </div>
+</div>
+
+<div id="cinematicOverlay"></div>
+
+<button id="cinematicBtn" onclick="toggleCinematic()">
+    Cinematic Mode
+</button>
+
+<div id="idleOverlay">
+    <div id="idleText">Are You There?</div>
+    <img src="dvdlogo.png" id="dvdLogo">
+</div>
+
+<div id="themeOverlay">
+    <div id="themeOverlayText"></div>
+</div>
+
+<div id="achievementPopup"></div>
+
+<div class="achievements-page page" id="achievementsPage">
+    <div class="quiz-box">
+        <h1>Achievements</h1>
+        
+        <button class="reset-achievements-btn" onclick="resetAchievements()">
+            Reset Achievements
+        </button>
+
+        <div id="achievementList"></div>
+    </div>
+</div>
+
+<script>
+let viewedPictures = new Set();
+let currentIndex = 0;
+let isAnimating = false;
+let currentImageIndex = null;
+let currentItem = null;
+let currentTheme = "default";
+
+const clickSound = new Audio("justsomesounds-click-sound-432501.mp3");
+const rainAmbient = new Audio("RainAmbiance.mp3");
+const spaceAmbient = new Audio("Space.mp3");
+const forestAmbient = new Audio("Forest.mp3");
+const windAmbient = new Audio("Wind.mp3");
+
+rainAmbient.loop = true;
+rainAmbient.volume = 1;
+
+spaceAmbient.loop = true;
+spaceAmbient.volume = 1;
+
+forestAmbient.loop = true;
+forestAmbient.volume = 1;
+
+windAmbient.loop = true;
+windAmbient.volume = 0.1;
+
+const timeModes = [
+    "years",
+    "months",
+    "weeks",
+    "days",
+    "hours",
+    "minutes",
+    "seconds",
+    "milliseconds"
+];
+
+const startDate = new Date("October 29, 2025 14:04");
+let timeData = {};
+
+const imageData = [
+    { src:"dogselfie.jpeg", back:"You looked so cute in this picture. We did. We look so happy here, and I loved taking this one so much." },
+    { src:"devyjacket.jpeg", back:"I'm so glad I get to call you Mrs. Devy. I hope you feel even a fraction of what I feel when I call you that." },
+    { src:"hallwayhand.jpeg", back:"I really hope you understand how much I love when people take pictures like this, of both of us. Seeing you with me from an outside view is the best thing ever." },
+    { src:"busmwahs.JPG", back:"I think the first ever picture that I looked at on my spare time. You genuinley look so gorgeous here. The way I'm kissing you is actually so cute." },
+    { src:"mwahs1.jpeg", back:"I didn't even know you took this picture, but everytime I look at it, I smile. I absolutley love love LOVE giving you mwahs and mwahsies." },
+    { src:"mirror1.jpeg", back:"I literally love your mirror pictures. Especially when your face is showing. God, I swear you're so beautiful." },
+    { src:"hallcuddle.jpg", back:"Not my first, but definetly the picture that spent the longest as my background. I just love you cute you look, the way we're matching, how comfortable you look with me, it's all so perfect in my opinion." },
+    { src:"mirror2.jpeg", back:"I can't tell you enough how good you look wearing your uniform. Like, I swear, you could walk around i literally anything and I would be head over heels, litterally. Like it just blows my mind how beautiful you are. Also, me mwahsing you is so cute and I can see your little smile" },
+    { src:"mirror3.jpeg", back:"Seeing your pretty little smile is the cuttest little thing in life. The way you try so hard to make yourself look so good, but the pictures you look best in are the ones when you don't try." },
+    { src:"bday1.jpeg", back:"This one was my lock screen for so long, and for good reason. That little cute smile of yours is the cuttest thing ever jay I pinky peel that, oh my god." },
+    { src:"bday2.jpeg", back:"I think this one has to be my favorite birthday picture of you. Your pose, the background, the lighting, the outfit, the way you're face looks. Everything just feels so perfect about this one." },
+    { src:"bday3.jpeg", back:"This birthday pic of you is so beyond dazzling. Like, the whole background, the floating orbs, the little smile? THAT SMILE? Oh my god. I would kill for that smile, Jay. You're so beautiful here." },
+    { src:"snake.jpeg", back:"When you went to the animal shelter and held a snake. Not exactly 'cute', per se, but deffinetly shows that you're cool. I got lucky with you." },
+    { src:"holdingface.jpeg", back:"The longer we're together, the more I love that little smile of yours. It's the second cuttest thing in the world; first is your laugh" },
+    { src:"holdingface2.jpeg", back:"Holding your face was honestly such an amazing feeling. Like, knowing that you trust me and are comfortable enough with me is just amazing💕" },
+    { src:"'wetdog'.jpeg", back:"This picture.. Oh. My. Days. I can't believe this picture exists. You look.. SO BEAUTIFUL. Too many words than what will fit here." },
+    { src:"fav1.jpeg", back:"This picture is my favorite picture. 100%. No doubt. It's just amazing. You're cute. I'm cute. We're cute together. You're wearing my 'DEVY' jacket. We're outside, together, not in school. It's just perfect. I love you, I love us, so much" },
+    { src:"holdinghand2.jpeg", back:"Very simple picture, but still one of my favorites. It's just, holding your hand is so comforting to me, honestly." },
+    { src:"unihand.jpeg", back:"I actually remember you telling me to hold your hand 'like that again.' I remember this whole interaction; I was holding your hand, I let go because you were behind me, aand you told me 'Wait, do that again' as you took the picture. I didn't realize how much I'd end up loving this one." },
+    { src:"hairheart.jpeg", back:"This one is still and will forever be your contact photo on my phone. You randomly sent this one to me when I didn't have my phone, and when I got it back, I made it your contact photo and it never changed." },
+    { src:"date.jpeg", back:"Our first date, or half date, whatever you wanna call it, I loved this day with my whole heart💕" },
+    { src:"dress.jpeg", back:"Oh my days, this picture was honestly my favorite picture of you for a veryyyyyy long time. I just love the way you look here, you look so gorgeous." },
+    { src:"fredrick.jpeg", back:"Yes. His name is Fredrick. I love this little cute fox with my whole heart. His beady black eyes and soft fur and his little smile and for the LONGEST time, he smelled like you. I pinky promise, Jay, he's the second best gift I've ever been given, first, of course, is you." },
+    { src:"hugging.jpeg", back:"This was my first lockscreen of you. This whole picture, the way we look, the way you're on your tippy toes, it's just such a cute picture of you." },
+    { src:"pumpkin.jpeg", back:"This one here definetly started a lot of shit, but it's so cute to just look at. Before we were even together, I was already carving your initial into a pumpkin. That better go to show how much I really love you." },
+    { src:"thigh.jpeg", back:"You know, looking at this picture, it makes me remember how cute resting my hand on your thight is. like, it's so comfortable there and just feels amazing too. Not doing anything, just resting there. It's so cute." },
+    { src:"spiritmatch.jpeg", back:"I remember doing this one in STEM, when we were matching and you like.. forced me to take it. I love taking pictures, because, to me, pictures are memories captured. " },
+    { src:"braclet.jpeg", back:"Our matching braclets are litterally, I'd say, one of the highlights of our relationship. We both wear them 24/7, we both get compliments, and EVERYONE says it's sooo cute how we match them." },
+    { src:"resting.jpeg", back:"I remember the reason we took this picture. You randomly told me one day that we need to take more pictures, then about an hour later, this one was born. I love the whole backstory to this one, because I agree: we DO need more pictures, because with you, a photobook's worth isn't enough. "},
+    { src:"disney.jpeg", back:"This picture of us outside, me with my disney sweater, giving you a hug from behind, you with the camera, like this picture is deffiently top 10. It's so simple yet so perfect and I love it."},
+    { src:"birch.jpeg", back:"So, not the best location, but deffinetly a REALLY pretty picture of you with birch. Your smile, the lights, everything about this one is so pretty and so amazing. I love this one every time I look at it."},
+    { src:"pretty.jpeg", back:"This picture here is just. wow. I mean. I-. Wow babe. Your hair is just... words just don't describe. Words just can't describe it. This has to be top 3 pictures for you"},
+    { src:"henna2.jpeg", back:"I remember taking this picture. It was after drill practice. Not too long after we got the bracelets, our relationship was still kinda fresh. I think this picture holds more than just pixles, I feel like it holds something that can't be explained with words. something better than love."},
+    { src:"hallarm.jpg", back:"Arm around in hall"},
+    { src:"first.jpg", back:"first picture/auditorium hand hold"},
+    { src:"normalhall.jpeg", back:" Normal Hall picture"},
+    { src:"athleticcenter.jpeg", back:"Athletic Center picture"},
+    { src:"crazy.jpeg", back:"crazy tounge-out"},
+    { src:"shopuniselfie.jpeg", back:"Shop Uniform selfie"},
+    { src:"icecream.jpeg", back:"ice cream pic"},
+    { src:"dress2.jpeg", back:"Dress 2"},
+    { src:"bathroom.jpeg", back:"Bathroom mirror picture"},
+    { src:"random1.jpeg", back:"Ice cream day picture 1"},
+    { src:"random2.jpeg", back:"ice cream day picture 2"},
+    { src:"fieldtrip1.jpeg", back:"Video Production Field trip 1"},
+    { src:"fieldtrip2.jpeg", back:"Video Production Field trip 2"},
+    { src:"triplet1.png", back:"Tripple Picture1"},
+    { src:"triplet3.png", back:"Tripple Picture2"},
+];
+
+const loadingBar =
+    document.getElementById("loadingBarInner");
+
+const loadingScreen =
+    document.getElementById("loadingScreen");
+
+let fakeProgress = 0;
+
+const loadingInterval = setInterval(() => {
+
+    fakeProgress += Math.random() * 100;
+
+    if (fakeProgress > 100) {
+        fakeProgress = 100;
+    }
+
+    loadingBar.style.width =
+        fakeProgress + "%";
+
+    if (fakeProgress >= 100) {
+
+        clearInterval(loadingInterval);
+
+        setTimeout(() => {
+
+            loadingScreen.classList.add("hide");
+
+            setTimeout(() => {
+                loadingScreen.remove();
+            }, 1000);
+
+        }, 500);
+    }
+
+}, 180);
+
+function updateTime() {
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / 86400000);
+    const totalMilliseconds = Math.floor(diff);
+    const totalSeconds = Math.floor(totalMilliseconds / 1000);
+    const totalMinutes = Math.floor(diff / 60000);
+    const totalHours = Math.floor(days * 24);
+    const weeks = Math.floor(days / 7);
+    const months = Math.floor(days / 30);
+    const years = days / 365;
+
+    timeData = {
+        years,
+        months,
+        weeks,
+        days,
+        hours: totalHours,
+        minutes: totalMinutes,
+        seconds: totalSeconds,
+        milliseconds: totalMilliseconds
+    };
+
+    const mode = timeModes[currentIndex];
+    let value = timeData[mode];
+
+    if (mode === "years") {
+        value = value.toFixed(2);
+    } else {
+        value = Math.floor(value);
+    }
+
+    value = Number(value).toLocaleString();
+
+    document.getElementById("timeValue").textContent = value;
+    document.getElementById("timeLabel").textContent = mode;
+}
+
+function openExtraPage(pageId) {
+    const menuItems = Array.from(document.querySelectorAll('.menu-item'));
+    const extrasTab = menuItems.find(el => el.textContent.trim() === 'Extras/Games');
+    
+    if (extrasTab) {
+        showPage(pageId, extrasTab);
+    }
+}
+
+function nextTime() {
+    currentIndex = (currentIndex + 1) % timeModes.length;
+    updateTime();
+}
+
+setInterval(updateTime, 0.01);
+updateTime();
+
+function prevTime() {
+    currentIndex = (currentIndex - 1 + timeModes.length) % timeModes.length;
+    updateTime();
+}
+
+document.addEventListener("click", (e) => {
+
+    if (e.target.closest(".menu-item")) return;
+
+    if (e.target.closest(".music-edge") || e.target.closest(".music-btn")) return;
+
+    if (e.target.closest(".favorites-btn")) return;
+
+    if (e.target.closest(".secret-hint")) return;
+
+    if (e.target.closest(".return-home-btn")) return;    
+
+    if (e.target.closest(".links-btn")) return;
+
+    if (e.target.closest("#musicPanel") || e.target.closest("#favoritesPanel") || e.target.closest("#linksPanel")) return;
+
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+
+    clickSound.currentTime = 0;
+    clickSound.play().catch(() => {});
+
+});
+
+function showPage(id, el) {
+    const current = document.querySelector(".page.active");
+    const next = document.getElementById(id);
+
+    if (current === next) return;
+
+    if (id === "timeline") {
+    renderTimeline();
+    unlockAchievement("memoryWatcher");
+    }
+
+    if (id === "pictures") {
+        unlockAchievement("picturesPage");
+    }
+
+    if (id === "story") {
+        unlockAchievement("bookWorm");
+    }
+
+    const isGoingToPictures = id === "pictures";
+
+    next.classList.remove("enter-left", "enter-right", "exit-left", "exit-right");
+    current.classList.remove("enter-left", "enter-right", "exit-left", "exit-right");
+
+    next.classList.add(isGoingToPictures ? "enter-right" : "enter-left");
+
+    next.offsetHeight;
+
+    next.classList.add("active");
+    next.classList.remove("enter-left", "enter-right");
+
+    current.classList.add(isGoingToPictures ? "exit-left" : "exit-right");
+
+    setTimeout(() => {
+        current.classList.remove("active", "exit-left", "exit-right");
+    }, 450);
+
+    document.querySelectorAll(".menu-item").forEach(i => i.classList.remove("active"));
+    el.classList.add("active");
+
+    const quoteBox = document.getElementById("quoteBox");
+    quoteBox.style.display = id === "home" ? "block" : "none";
+
+    closeOverlay();
+    trackStudyPage(pageId);
+}
+
+function showThemeOverlay(theme) {
+
+    const overlay = document.getElementById("themeOverlay");
+    const text = document.getElementById("themeOverlayText");
+
+    text.textContent =
+        theme.charAt(0).toUpperCase() + theme.slice(1);
+
+    overlay.classList.add("show");
+
+    clearTimeout(window.themeOverlayTimeout);
+
+    window.themeOverlayTimeout = setTimeout(() => {
+
+        text.style.opacity = "0";
+        text.style.transform = "scale(0.8) translateY(20px)";
+
+        setTimeout(() => {
+            overlay.classList.remove("show");
+
+            setTimeout(() => {
+                text.style.opacity = "";
+                text.style.transform = "";
+            }, 300);
+
+        }, 350);
+
+    }, 1500);
+}
+
+function setTheme(theme) {
+
+    if (theme === currentTheme) {
+        return;
+    }
+
+    unlockAchievement("firstTheme");
+
+    currentTheme = theme;
+    document.body.classList.remove("sunmoon-stars");
+    stopLeaves();
+    stopSunMoon();
+    stopShootingStars();
+    stopHearts();
+    stopRain();
+    stopStars();
+    stopMeteors();
+    stopSnow();
+    rainAmbient.pause();
+    rainAmbient.currentTime = 0;
+    spaceAmbient.pause();
+    spaceAmbient.currentTime = 0;
+    forestAmbient.pause();
+    forestAmbient.currentTime = 0;
+    windAmbient.pause();
+    windAmbient.currentTime = 0;
+    document.body.className = "";
+
+    if (theme !== "default") {
+        document.body.classList.add(theme);
+    }
+
+    if (theme === "ocean") {
+        unlockAchievement("underTheSea");
+    }
+
+    if (theme === "sunrise") {
+        unlockAchievement("watchTheSun");
+    }
+
+    if (theme === "forest") {
+        forestAmbient.currentTime = 0;
+        forestAmbient.play().catch(() => {});
+        unlockAchievement("forestExplorer");
+    }
+
+    if (theme === "heaven") {
+        unlockAchievement("heavenlySky");
+    }
+
+    if (theme === "midnight") {
+        createStars(count = 17);
+        unlockAchievement("midnightWalker");
+    }
+
+    if (theme === "hearts") {
+        startHearts();
+        unlockAchievement("heartCollector");
+    }
+
+    if (theme === "cottoncandy") {
+        unlockAchievement("sweetTooth");
+    }
+
+    if (theme === "rain") {
+        unlockAchievement("rainLover");
+        createRain();
+        rainAmbient.currentTime = 0;
+        rainAmbient.play().catch(() => {});
+    }
+
+    if (theme === "galaxy") {
+        createStars(count = 240);
+        startShootingStars();
+        startMeteors();
+        unlockAchievement("galaxyVisitor");
+        spaceAmbient.currentTime = 0;
+        spaceAmbient.play().catch(() => {});
+    }
+
+    if (theme === "burger") {
+        unlockAchievement("hungryMan");
+    }
+
+    if (theme === "sunmoon") {
+        createSunMoon();
+        createStars(80);
+        document.body.classList.add("sunmoon-stars");
+        unlockAchievement("sunMoonWatcher");
+    }
+
+    if (theme === "fall") {
+        createLeaves();
+        windAmbient.currentTime = 0;
+        windAmbient.play().catch(() =>{});
+        unlockAchievement("autumnBreeze");
+    }
+
+    if (theme === "winter") {
+        createSnow();
+        unlockAchievement("winterExplorer");
+    }
+
+    showThemeOverlay(theme);
+    trackThemeChange();
+    handleRainTheme(theme);
+    handleDefaultTheme(theme);
+    localStorage.setItem("selectedTheme", theme);
+}
+
+function createSnow() {
+
+    const container =
+        document.getElementById("winterSnow");
+
+    container.innerHTML = "";
+
+    const snowflakes = [
+        "❄",
+        "❅",
+        "❆"
+    ];
+
+    for (let i = 0; i < 140; i++) {
+
+        const snow = document.createElement("div");
+
+        snow.className = "snowflake";
+
+        snow.textContent =
+            snowflakes[
+                Math.floor(Math.random() * snowflakes.length)
+            ];
+
+        snow.style.left =
+            Math.random() * 100 + "vw";
+
+        snow.style.fontSize =
+            (8 + Math.random() * 20) + "px";
+
+        snow.style.opacity =
+            0.3 + Math.random() * 0.7;
+
+        snow.style.animationDuration =
+            (8 + Math.random() * 10) + "s";
+
+        snow.style.animationDelay =
+            Math.random() * 10 + "s";
+
+        container.appendChild(snow);
+    }
+}
+
+function stopSnow() {
+
+    const container =
+        document.getElementById("winterSnow");
+
+    container.innerHTML = "";
+}
+
+const achievements = {
+
+    firstTheme: {
+        title: "New Style",
+        description: "Change your theme for the first time.",
+        unlocked: false
+    },
+
+    minimalist: {
+        title: "Minimalist",
+        description: "Stay on the Default theme for 5 minutes.",
+        unlocked: false
+    },
+
+    defaultTheme: {
+        title: "Back To Basics",
+        description: "Use the Default theme.",
+        unlocked: false
+    },
+
+    underTheSea: {
+        title: "Under The Sea",
+        description: "Enter the Ocean Theme",
+        unlocked: false
+    },
+
+    watchTheSun: {
+        title: "Sunrise on the Reaping",
+        description: "Enter the Sunrise Theme",
+        unlocked: false
+    },
+
+    forestExplorer: {
+        title: "Into The Woods",
+        description: "Enter the Forest theme.",
+        unlocked: false
+    },
+
+    heavenlySky: {
+        title: "Cloud Nine",
+        description: "Enter the Heaven theme.",
+        unlocked: false
+    },
+
+    midnightWalker: {
+        title: "After Dark",
+        description: "Enter the Midnight theme.",
+        unlocked: false
+    },
+
+    heartCollector: {
+        title: "Heart Collector",
+        description: "Enter the Hearts theme.",
+        unlocked: false
+    },
+
+    sweetTooth: {
+        title: "Sugar Rush",
+        description: "Enter the Cotton Candy theme.",
+        unlocked: false
+    },
+
+    rainLover: {
+        title: "Storm Watcher",
+        description: "Use the Rain theme.",
+        unlocked: false
+    },
+
+    galaxyVisitor: {
+        title: "Space Traveler",
+        description: "Enter the Galaxy theme.",
+        unlocked: false
+    },
+
+    hungryMan: {
+        title: "Hungry",
+        description: "Use the 'Burger' theme.",
+        unlocked: false
+    },
+
+    sunMoonWatcher: {
+        title: "Balance Of The Sky",
+        description: "Enter the Sun & Moon theme.",
+        unlocked: false
+    },
+
+    autumnBreeze: {
+        title: "Autumn Breeze",
+        description: "Enter the Fall theme.",
+        unlocked: false
+    },
+
+    winterExplorer: {
+        title: "Winter Wonderland",
+        description: "Enter the Winter theme.",
+        unlocked: false
+    },
+
+    rainyMood: {
+        title: "Rainy Mood",
+        description: "Stayed on Rain theme for 5 minutes",
+        unlocked: false
+    },
+
+    nightOwl: {
+        title: "Night Owl",
+        description: "Used the site late at night (12 AM - 4 AM)",
+        unlocked: false
+    },
+
+    cantStopLooking: {
+        title: "Can't Stop Looking",
+        description: "Open 15 pictures.",
+        unlocked: false
+    },
+
+    picturesPage: {
+        title: "Memories",
+        description: "Open the pictures tab.",
+        unlocked: false
+    },
+
+    memoryWatcher: {
+        title: "Nestolgia",
+        description: "Open the 'Timeline' page.",
+        unlocked: false
+    },
+
+    bookWorm: {
+        title: "Book Worm",
+        description: "Open the 'Story' page.",
+        unlocked: false
+    },
+
+    idleMaster: {
+        title: "Are You There?",
+        description: "Stay idle for 3 minutes.",
+        unlocked: false
+    },
+
+    meteorWatcher: {
+        title: "Wish Upon A Star",
+        description: "Secret🔒",
+        unlocked: false
+    },
+
+    trueListener: {
+        title: "Mirrors",
+        description: "🔒",
+        unlocked: false
+    },
+
+    
+};
+
+function checkNightOwl() {
+    const hour = new Date().getHours();
+
+    if (hour >= 0 && hour <= 4) {
+        unlockAchievement("nightOwl");
+    }
+}
+
+window.addEventListener("load", checkNightOwl);
+
+const stats = [
+    {
+        id: "daysTogether",
+        label: "Days together",
+        compute: () => {
+            const start = new Date("October 29, 2025 14:04");
+            const diff = Date.now() - start;
+            return Math.floor(diff / (1000 * 60 * 60 * 24));
+        }
+    },
+
+    {
+        id: "hoursTogether",
+        label: "Hours together",
+        compute: () => {
+            const start = new Date("October 29, 2025 14:04");
+            return Math.floor((Date.now() - start) / (1000 * 60 * 60));
+        }
+    },
+
+    {
+        id: "daysSinceLastKiss",
+        label: "Days since last kiss",
+        compute: () => {
+            const lastKiss = new Date("March 21, 2026 00:00");
+            return "-1";
+        }
+    },
+
+    {
+        id: "picturesViewed",
+        label: "Pictures Oppened This Session",
+        compute: () => viewedPictures.size
+    },
+    
+    {
+    id: "daysUntilGraduation",
+    label: "Days until graduation",
+    compute: () => {
+        const graduation = new Date("June 25, 2029 00:00");
+        return Math.max(
+            0,
+            Math.ceil((graduation - Date.now()) / (1000 * 60 * 60 * 24))
+        );
+    }
+    },
+
+    {
+    id: "mwahsGiven",
+    label: "Mwahs given",
+    compute: () => {
+        const start = new Date("October 29, 2025 14:04");
+        const now = Date.now();
+
+        const daysPassed = (now - start.getTime()) / 86400000;
+
+        return Math.floor(daysPassed * 86);
+        }
+    },
+
+    {
+    id: "mwahsiesGiven",
+    label: "Mwahsies given",
+    compute: () => {
+        const start = new Date("October 29, 2025 14:04");
+        const now = Date.now();
+
+        const daysPassed = (now - start.getTime()) / 86400000;
+
+        return Math.floor(daysPassed * 32);
+            }
+    },
+
+    {
+    id: "loveYousSaid",
+    label: "I love you's said",
+    compute: () => {
+        const start = new Date("October 29, 2025 14:04");
+        const now = Date.now();
+
+        const daysPassed = (now - start.getTime()) / 86400000;
+
+        return Math.floor(daysPassed * 135);
+        }
+    }   
+];
+
+let rainTimer = null;
+
+function handleRainTheme(theme) {
+
+    if (theme === "rain") {
+        rainTimer = setTimeout(() => {
+            unlockAchievement("rainyMood");
+        }, 300000);
+    } else {
+        clearTimeout(rainTimer);
+    }
+}
+
+let studyTimer = null;
+
+function loadAchievements() {
+
+    const saved = JSON.parse(
+        localStorage.getItem("achievements")
+    );
+
+    if (saved) {
+
+        Object.keys(saved).forEach(key => {
+
+            if (achievements[key]) {
+                achievements[key].unlocked = saved[key];
+            }
+        });
+    }
+
+    renderAchievements();
+}
+
+function saveAchievements() {
+
+    const saveData = {};
+
+    Object.keys(achievements).forEach(key => {
+        saveData[key] = achievements[key].unlocked;
+    });
+
+    localStorage.setItem(
+        "achievements",
+        JSON.stringify(saveData)
+    );
+}
+
+function unlockAchievement(id) {
+
+    if (!achievements[id]) return;
+
+    if (achievements[id].unlocked) return;
+
+    achievements[id].unlocked = true;
+
+    saveAchievements();
+
+    showAchievementPopup(
+        achievements[id].title
+    );
+
+    renderAchievements();
+}
+
+function showAchievementPopup(title) {
+
+    const popup = document.getElementById("achievementPopup");
+
+    popup.innerHTML = "Achievement Unlocked: " + title;
+
+    popup.classList.add("show");
+
+    setTimeout(() => {
+        popup.classList.remove("show");
+    }, 3500);
+}
+
+function resetAchievementsPopup(title) {
+
+    const popup = document.getElementById("achievementPopup");
+
+    popup.textContent =
+        " " + title;
+
+    popup.classList.add("show");
+
+    setTimeout(() => {
+        popup.classList.remove("show");
+    }, 3500);
+}
+
+function renderAchievements() {
+
+    const list =
+        document.getElementById("achievementList");
+
+    list.innerHTML = "";
+
+    Object.values(achievements).forEach(a => {
+
+        const div = document.createElement("div");
+
+        div.className =
+            "achievement-item" +
+            (a.unlocked ? "" : " locked");
+
+        div.innerHTML = `
+            <h3>${a.title}</h3>
+            <p>${a.description}</p>
+            <strong>
+                ${a.unlocked ? "Unlocked" : "Locked"}
+            </strong>
+        `;
+
+        list.appendChild(div);
+    });
+}
+
+function resetAchievements() {
+
+    Object.keys(achievements).forEach(key => {
+
+        achievements[key].unlocked = false;
+
+    });
+
+    localStorage.removeItem("achievements");
+
+    renderAchievements();
+
+    resetAchievementsPopup("Achievements Reset");
+}
+
+loadAchievements();
+
+function createSunMoon() {
+
+    const container = document.getElementById("sunMoonContainer");
+
+    container.innerHTML = "";
+
+    const sun = document.createElement("div");
+    sun.className = "sun";
+
+    const moon = document.createElement("div");
+    moon.className = "moon";
+
+    container.appendChild(sun);
+    container.appendChild(moon);
+}
+
+function stopSunMoon() {
+
+    const container = document.getElementById("sunMoonContainer");
+
+    container.innerHTML = "";
+}
+
+let meteorInterval;
+
+function createMeteor() {
+
+    const meteor = document.createElement("div");
+    meteor.className = "meteor";
+
+    meteor.style.left = Math.random() * window.innerWidth + "px";
+
+    const duration = 1.5 + Math.random() * 1.5;
+
+    meteor.style.animationDuration = duration + "s";
+
+    document.body.appendChild(meteor);
+
+    unlockAchievement("meteorWatcher");
+    
+    setTimeout(() => {
+        meteor.remove();
+    }, duration * 1000);
+}
+
+function startMeteors() {
+
+    stopMeteors();
+
+    meteorInterval = setInterval(() => {
+
+        createMeteor();
+
+        if (Math.random() > 0.6) {
+            setTimeout(createMeteor, 300);
+        }
+
+    }, 4000);
+}
+
+function stopMeteors() {
+
+    clearInterval(meteorInterval);
+
+    document.querySelectorAll(".meteor").forEach(meteor => {
+        meteor.remove();
+    });
+}
+
+let shootingStarInterval;
+
+function createShootingStar() {
+
+    const star = document.createElement("div");
+
+    star.className = "shooting-star";
+
+    star.style.left =
+        Math.random() * window.innerWidth + "px";
+
+    star.style.top =
+        Math.random() * (window.innerHeight * 0.4) + "px";
+
+    document.body.appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 1300);
+}
+
+function startShootingStars() {
+
+    stopShootingStars();
+
+    shootingStarInterval = setInterval(() => {
+
+        if (Math.random() < 0.45) {
+            createShootingStar();
+        }
+
+    }, 4000);
+}
+
+function stopShootingStars() {
+
+    clearInterval(shootingStarInterval);
+
+    document.querySelectorAll(".shooting-star")
+        .forEach(star => star.remove());
+}
+
+function createLeaves() {
+
+    const leafContainer =
+        document.getElementById("leafContainer");
+
+    for (let i = 0; i < 45; i++) {
+
+        const leaf = document.createElement("div");
+
+        leaf.classList.add("leaf");
+
+        leaf.textContent = "🍂";
+
+        leaf.style.left =
+            Math.random() * 100 + "vw";
+
+        leaf.style.animationDuration =
+            (4 + Math.random() * 3) + "s";
+
+        leaf.style.animationDelay =
+            Math.random() * 5 + "s";
+
+        leaf.style.fontSize =
+            (18 + Math.random() * 20) + "px";
+
+        leaf.style.opacity =
+            0.4 + Math.random() * 0.6;
+
+        leaf.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+        leafContainer.appendChild(leaf);
+    }
+}
+
+function createLeaf() {
+    const leaf = document.createElement("div");
+    leaf.classList.add("leaf");
+
+    const speed = 0.6 + Math.random() * 1.4;
+    const strength = 10 + Math.random() * 30;
+    const seed = Math.random() * 1000;
+
+    leaf.dataset.speed = speed;
+    leaf.dataset.strength = strength;
+    leaf.dataset.seed = seed;
+
+    leaf.style.left = Math.random() * 100 + "vw";
+    leaf.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+    document.getElementById("leafContainer").appendChild(leaf);
+
+    animateLeaf(leaf);
+}
+
+function landLeaf(leaf) {
+
+    const clone = leaf.cloneNode(true);
+
+    clone.style.position = "absolute";
+    clone.style.left = leaf.style.left;
+
+    const size = 10 + Math.random() * 10;
+    clone.style.width = size + "px";
+    clone.style.height = size + "px";
+
+    clone.style.opacity = "0.8";
+    clone.style.animation = "none";
+    clone.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+    leafGround.appendChild(clone);
+
+    leaf.remove();
+}
+
+const leafGround = document.createElement("div");
+leafGround.className = "leaf-ground";
+document.body.appendChild(leafGround);
+
+function animateLeaf(leaf) {
+    let start = performance.now();
+
+    function move(t) {
+        const elapsed = (t - start) / 1000;
+
+        const speed = parseFloat(leaf.dataset.speed);
+        const strength = parseFloat(leaf.dataset.strength);
+        const seed = parseFloat(leaf.dataset.seed);
+
+        const x = Math.sin(elapsed * speed + seed) * strength;
+
+        leaf.style.transform = `translateX(${x}px)`;
+
+        requestAnimationFrame(move);
+    }
+
+    requestAnimationFrame(move);
+}
+
+function stopLeaves() {
+
+    const leafContainer =
+        document.getElementById("leafContainer");
+
+    leafContainer.innerHTML = "";
+}
+
+function createRain() {
+    const rainContainer = document.getElementById("rainContainer");
+
+    for (let i = 0; i < 180; i++) {
+
+        const drop = document.createElement("div");
+        drop.classList.add("raindrop");
+
+        drop.style.left = Math.random() * 100 + "vw";
+
+        drop.style.animationDuration =
+            (0.5 + Math.random() * 0.7) + "s";
+
+        drop.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        drop.style.opacity =
+            0.2 + Math.random() * 0.5;
+
+        rainContainer.appendChild(drop);
+    }
+}
+
+function stopRain() {
+
+    const rainContainer = document.getElementById("rainContainer");
+
+    rainContainer.innerHTML = "";
+
+}
+
+let heartInterval = null;
+
+const heartEmojis = [
+    "💕",
+    "💓",
+    "💗",
+    "❣",
+    "❤️",
+    "🩷"
+];
+
+function createHeart() {
+
+    const container = document.querySelector(".heart-container");
+
+    if (!container) return;
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+
+    heart.textContent =
+        heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    const size = Math.random() * 28 + 18;
+    heart.style.fontSize = size + "px";
+
+    const duration = Math.random() * 6 + 8;
+    heart.style.animationDuration = duration + "s";
+
+    heart.style.opacity = Math.random() * 0.4 + 0.4;
+
+    container.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, duration * 1000);
+}
+
+function startHearts() {
+
+    stopHearts();
+
+    const container = document.createElement("div");
+    container.className = "heart-container";
+
+    document.body.appendChild(container);
+
+    for (let i = 0; i < 18; i++) {
+        setTimeout(createHeart, i * 300);
+    }
+
+    heartInterval = setInterval(createHeart, 300);
+}
+
+function stopHearts() {
+
+    clearInterval(heartInterval);
+
+    const container = document.querySelector(".heart-container");
+
+    if (container) {
+        container.remove();
+    }
+}
+
+function renderGrid() {
+    const grid = document.getElementById("grid");
+    grid.innerHTML = "";
+
+    const shuffled = [...imageData].sort(() => Math.random() - 0.5);
+
+    shuffled.forEach((item) => {
+        const img = document.createElement("img");
+        img.src = item.src;
+
+        img.onclick = (e) => openImage(img, item);
+
+        grid.appendChild(img);
+    });
+}
+
+let minimalistTimer = null;
+
+function handleDefaultTheme(theme) {
+
+    clearTimeout(minimalistTimer);
+
+    if (theme === "default") {
+
+        minimalistTimer = setTimeout(() => {
+
+            unlockAchievement("minimalist");
+
+        },  1000);
+    }
+}
+
+function openImage(img, item) {
+    currentItem = item;
+    viewedPictures.add(item.src);
+    
+    const overlay = document.getElementById("overlay");
+    const zoomImg = document.getElementById("zoomImg");
+    const flipPanel = document.getElementById("flipPanel");
+
+    const rect = img.getBoundingClientRect();
+
+    viewedPictures.add(item.src);
+
+    if (viewedPictures.size >= 15) {
+        unlockAchievement("cantStopLooking");
+    }
+
+    overlay.style.display = "flex";
+
+    zoomImg.src = item.src;
+    zoomImg.style.display = "block";
+    flipPanel.style.display = "none";
+
+    zoomImg.style.transition = "none";
+    zoomImg.style.top = rect.top + "px";
+    zoomImg.style.left = rect.left + "px";
+    zoomImg.style.width = rect.width + "px";
+    zoomImg.style.height = rect.height + "px";
+    zoomImg.style.transform = "scale(1)";
+
+    zoomImg.getBoundingClientRect();
+
+    requestAnimationFrame(() => {
+        zoomImg.style.transition = "all 0.55s cubic-bezier(.2,.8,.2,1)";
+        zoomImg.style.top = "50%";
+        zoomImg.style.left = "50%";
+        zoomImg.style.width = "36%";
+        zoomImg.style.height = "90%";
+        zoomImg.style.transform = "translate(-50%, -50%) scale(1)";
+    });
+}
+
+document.getElementById("zoomImg").addEventListener("transitionend", () => {
+    if (!currentItem) return;
+
+    const zoomImg = document.getElementById("zoomImg");
+    const flipPanel = document.getElementById("flipPanel");
+    const frontImg = document.getElementById("frontImg");
+    const backText = document.getElementById("backText");
+    
+    frontImg.src = currentItem.src;
+    backText.textContent = currentItem.back;
+
+    zoomImg.style.display = "none";
+    flipPanel.style.display = "block";
+
+    document.getElementById("flipInner").classList.remove("flipped");
+});
+
+document.getElementById("flipPanel").onclick = (e) => {
+    e.stopPropagation();
+    document.getElementById("flipInner").classList.toggle("flipped");
+};
+
+function renderStats() {
+    const grid = document.getElementById("statsGrid");
+    if (!grid) return;
+
+    grid.innerHTML = "";
+
+    stats.forEach(stat => {
+
+        const value = stat.compute();
+
+        const card = document.createElement("div");
+        card.className = "stat-card";
+
+        card.innerHTML = `
+            <h3>${stat.label}</h3>
+            <p>${value}</p>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+function closeOverlay() {
+    if (!currentItem) return;
+
+    const overlay = document.getElementById("overlay");
+    const zoomImg = document.getElementById("zoomImg");
+    const flipPanel = document.getElementById("flipPanel");
+
+    const imgs = document.querySelectorAll(".grid img");
+    let targetImg = null;
+
+    imgs.forEach(img => {
+        if (img.src.includes(currentItem.src)) {
+            targetImg = img;
+        }
+    });
+
+    if (!targetImg) {
+        overlay.style.display = "none";
+        currentItem = null;
+        return;
+    }
+
+    const rect = targetImg.getBoundingClientRect();
+
+    flipPanel.style.display = "none";
+    zoomImg.style.display = "block";
+
+    zoomImg.style.transition = "all 0.55s cubic-bezier(.2,.8,.2,1)";
+    zoomImg.style.top = "50%";
+    zoomImg.style.left = "50%";
+    zoomImg.style.width = "36%";
+    zoomImg.style.height = "90%";
+    zoomImg.style.transform = "translate(-50%, -50%)";
+
+    zoomImg.getBoundingClientRect();
+
+    requestAnimationFrame(() => {
+        zoomImg.style.top = rect.top + "px";
+        zoomImg.style.left = rect.left + "px";
+        zoomImg.style.width = rect.width + "px";
+        zoomImg.style.height = rect.height + "px";
+        zoomImg.style.transform = "scale(1)";
+    });
+
+    zoomImg.addEventListener("transitionend", function handler() {
+        overlay.style.display = "none";
+        currentItem = null;
+        zoomImg.removeEventListener("transitionend", handler);
+    });
+}
+
+document.getElementById("overlay").addEventListener("click", (e) => {
+    const flipPanel = document.getElementById("flipPanel");
+
+    if (!flipPanel.contains(e.target)) {
+        closeOverlay();
+    }
+});
+
+const memories = [
+    {
+        date: "October 25th, 2025",
+        title: "The Pumpkin/The Start",
+        text: "The imfamous pumpkin that started it all; the begining of our journey",
+        img: "IMG_2162.jpeg"
+    },
+    {
+        date: "November 4, 2025",
+        title: "First Hug Picture",
+        text: "Placeholder",
+        img: "IMG_0324.jpeg"
+    },
+    {
+        date: "November 8, 2025",
+        title: "Hair Heart",
+        text: "Placeholder",
+        img: "IMG_0541.jpeg"
+    },
+    {
+        date: "November 11, 2025",
+        title: "Holding Hands",
+        text: "placeholder",
+        img: "IMG_4304.jpeg"
+    },
+    {
+        date:"November 15, 2025",
+        title: "Dress Picture",
+        text: "Placeholder",
+        img: "lp_image.jpeg"
+    },
+    {
+        date: "November 18, 2025",
+        title: "leaning On Me In The Hall",
+        text: "Placeholder",
+        img: "3417462440215867137.jpg"
+    },
+    {
+        date: "December 3rd, 2025",
+        title: "Bus Mwahs",
+        text: "Placeholder",
+        img: "E1DCA263-B603-4233-B912-C0512B046F02.JPG"
+    },
+    {
+        date: "December 26, 2025",
+        title: "First Mirror Picture",
+        text: "Placeholder",
+        img: "IMG_1230.jpeg"
+    },
+    {
+        date: "January 7, 2026",
+        title: "Uniform Glass Mwahs picture",
+        text: "Placeholder",
+        img: "FullSizeRender (3).jpeg"
+    },
+    {
+        date: "January 7, 2026",
+        title:"Running Through The Halls",
+        text: "Placeholder",
+        img: "IMG_1508.jpeg"
+    },
+    {
+        date: "January 21, 2026",
+        title: "Devy Jacket Picture",
+        text: "Placeholder",
+        img: "CBAD0070-3295-4A5C-AC20-071C3B85FEE4.jpeg"
+    },
+    {
+        date: "March 21, 2026",
+        title: "My Favorite Picture of Us",
+        text: "This is still my favorite picture of us. Everything about it is perfect.",
+        img: "IMG_3284.jpeg"
+    },
+    {
+        date: "March 21, 2026",
+        title: "Our First Date",
+        text: "I loved this day, this picture with my whole heart.",
+        img: "IMG_2917.jpeg"
+    },
+];
+
+function renderTimeline() {
+    const container = document.getElementById("timelineContainer");
+    container.innerHTML = "";
+
+    memories.forEach((m, i) => {
+        const item = document.createElement("div");
+        item.className = "timeline-item";
+
+        item.innerHTML = `
+            <div class="timeline-content ${i % 2 === 0 ? "left" : "right"}">
+                <img src="${m.img}" />
+                <div class="timeline-text">
+                    <h3>${m.title}</h3>
+                    <small>${m.date}</small>
+                    <p>${m.text}</p>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(item);
+    });
+}
+
+function animateTimeline() {
+    const items = document.querySelectorAll(".timeline-content");
+
+    items.forEach(item => {
+        const rect = item.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight - 100) {
+            item.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", animateTimeline);
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    
+function saveFavorites() {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+function addFavorite() {
+    const quote = quotes[quoteIndex];
+
+    if (favorites.includes(quote)) {
+        return "exists";
+    }
+
+    favorites.push(quote);
+    saveFavorites();
+    renderFavorites();
+    return "added";
+}
+    
+function renderFavorites() {
+    const panel = document.getElementById("favoritesPanel");
+    if (!panel) return;
+
+    panel.innerHTML = "";
+
+    favorites.forEach((q, index) => {
+        const div = document.createElement("div");
+        div.className = "favorite-item";
+
+        const text = document.createElement("span");
+        text.textContent = q;
+
+        const removeBtn = document.createElement("span");
+        removeBtn.textContent = "✖";        
+        removeBtn.style.cursor = "pointer";
+        removeBtn.style.marginLeft = "8px";
+
+        removeBtn.onclick = () => removeFavorite(index);
+
+        div.appendChild(text);
+        div.appendChild(removeBtn);
+
+        panel.appendChild(div);
+    });
+}
+
+function toggleFavorites() {
+    const linksPanel = document.getElementById("linksPanel");
+    const favoritesPanel = document.getElementById("favoritesPanel");
+
+    const isOpening = favoritesPanel.style.display !== "flex";
+
+    if (isOpening) {
+        linksPanel.style.display = "none";
+    }
+
+    favoritesPanel.style.display = isOpening ? "flex" : "none";
+}
+
+function removeFavorite(index) {
+    favorites.splice(index, 1);
+    saveFavorites();
+    renderFavorites();
+}
+
+const quotes = [
+    "You are my favorite place to be.",
+    "Every day with you feels like a win.",
+    "I love the way you exist in my life.",
+    "Somehow you always feel like home.",
+    "I still get excited talking to you.",
+    "I don't hate you.",
+    "You're the love of my life.",
+    "I am never going to leave you",
+    "'When I look at you, I can feel it. And I look at you, and I'm home.'",
+    "I may not be your first date, kiss, or love, but I want to be your last everything.",
+    "The best thing to hold onto in life is each other.",
+    "The way you look at me makes me get butterflies",
+    "'Love means to see the one you love happy'"
+];
+
+let quoteIndex = 0;
+
+const quoteBox = document.getElementById("quoteBox");
+const quoteText = document.getElementById("quoteText");
+
+function showQuote() {
+    if (!quoteText) return;
+    quoteText.textContent = quotes[quoteIndex];
+}
+
+function nextQuote() {
+    const availableQuotes = quotes.filter(q => !favorites.includes(q));
+
+    if (availableQuotes.length === 0) return;
+
+    let newQuote;
+
+    do {
+        newQuote = availableQuotes[Math.floor(Math.random() * availableQuotes.length)];
+    } while (newQuote === quotes[quoteIndex]);
+
+    quoteIndex = quotes.indexOf(newQuote);
+    showQuote();
+}
+    
+let lastClickTime = 0;
+let clickTimeout = null;
+
+const DOUBLE_CLICK_DELAY = 200;
+const FAVORITE_LOCK_DELAY = 200;
+
+quoteBox.addEventListener("click", () => {
+    const now = Date.now();
+
+    if (now - lastClickTime < DOUBLE_CLICK_DELAY) {
+
+        showStar();
+
+        lastClickTime = 0;
+
+        clearTimeout(clickTimeout);
+        clickTimeout = null;
+
+        lastClickTime = now + FAVORITE_LOCK_DELAY;
+
+        return;
+    }
+
+    lastClickTime = now;
+
+    clearTimeout(clickTimeout);
+
+    clickTimeout = setTimeout(() => {
+
+        if (Date.now() - lastClickTime >= DOUBLE_CLICK_DELAY) {
+            nextQuote();
+        }
+
+        clickTimeout = null;
+        lastClickTime = 0;
+
+    }, DOUBLE_CLICK_DELAY);
+});
+
+const star = document.createElement("span");
+star.textContent = "⭐Added To Favorites";
+star.style.marginLeft = "8px";
+star.style.opacity = "0";
+star.style.transition = "0.5s ease";
+
+quoteBox.appendChild(star);
+
+function showStar() {
+    const result = addFavorite();
+
+    if (quoteText.textContent === "Click me 💕") return;
+
+    if (result === "added") {
+        star.textContent = "⭐Added To Favorites⭐";
+    } else {
+        star.textContent = "❌Already Favorited❌";
+    }
+
+    star.style.opacity = "1";
+
+    setTimeout(() => {
+        star.style.opacity = "0";
+    }, 500);
+}
+
+function clearFavorites() {
+    const confirmClear = confirm("Are you sure you want to clear all favorites?");
+
+    if (!confirmClear) return;
+
+    favorites = [];
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    renderFavorites();
+}
+
+function openSecretInput() {
+    document.getElementById("secretOverlay").style.display = "flex";
+}
+
+document.addEventListener("touchstart", () => {}, true);
+
+function closeSecretInput() {
+    document.getElementById("secretOverlay").style.display = "none";
+}
+
+document.addEventListener("keydown", (e) => {
+    const homeActive = document.getElementById("home").classList.contains("active");
+    if (!homeActive) return;
+
+    if (e.key === "ArrowRight") {
+        nextTime();
+    } else if (e.key === "ArrowLeft") {
+        prevTime();
+    }
+});
+
+function createStars(count = 120) {
+    const stars = document.getElementById("stars");
+
+    stars.innerHTML = "";
+
+    for (let i = 0; i < count; i++) {
+        const s = document.createElement("div");
+        s.className = "star";
+
+        s.style.top = Math.random() * 100 + "vh";
+        s.style.left = Math.random() * 100 + "vw";
+
+        s.style.animationDelay = Math.random() * 2 + "s";
+
+        stars.appendChild(s);
+    }
+}
+
+function stopStars() {
+
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach(star => {
+        star.remove();
+    });
+}
+
+function toggleMusic() {
+    const music = document.getElementById("musicPanel");
+    const links = document.getElementById("linksPanel");
+    const fav = document.getElementById("favoritesPanel");
+    const arrow = document.querySelector(".music-edge .arrow");
+
+    const isOpen = music.classList.contains("open");
+
+    if (links) links.style.display = "none";
+    if (fav) fav.style.display = "none";
+
+    if (isOpen) {
+        music.classList.remove("open");
+        arrow.style.transform = "rotate(0deg)";
+    } else {
+        music.classList.add("open");
+        unlockAchievement("trueListener");
+        arrow.style.transform = "rotate(180deg)";
+    }
+}
+
+function checkSecret() {
+    const val = document.getElementById("secretInput").value.toLowerCase().trim();
+    const valid = ["twenty nine", "twenty-nine", "29", "two nine"];
+    
+    if (valid.includes(val)) {
+        showSecretPage();
+        document.getElementById("finalBox").style.display = "block";
+    } else {
+        alert("Wrong code.");
+    }
+}
+
+let secretStep = 0;
+
+const secretSteps = [
+    "This is the part of the site that's just for you.",
+    "Not everything needs to be shown to everyone.",
+    "Some things are just meant to be felt.",
+    "Feel this, my love."
+];
+
+const secretSizes = [44, 60, 80, 100];
+
+const secretImages = [
+    "IMG_3284.jpeg",
+    "IMG_1769.jpeg",
+    "IMG_2652.jpeg",
+    "IMG_2397.jpeg",
+    "IMG_4304.jpeg"
+];
+
+function showSecretPage() {
+    secretStep = 0;
+
+    document.body.innerHTML = `
+        <div class="secret-page" id="secretPage">
+            <div id="secretContent"></div>
+        </div>
+    `;
+
+    const audio = new Audio("your-song.mp3");
+    audio.volume = 0.6;
+    audio.play().catch(() => {});
+
+    renderSecretStep();
+}
+
+function renderSecretStep() {
+    const el = document.getElementById("secretContent");
+
+    if (secretStep === 3) {
+    el.innerHTML = `
+        <p class="secret-text final-rise" id="secretText">
+            ${secretSteps[secretStep]}
+        </p>
+        <button onclick="nextSecretStep()">Continue</button>
+    `;
+
+    const textEl = document.getElementById("secretText");
+    textEl.style.fontSize = "60px";
+
+    return;
+}
+    if (secretStep < 4) {
+        el.innerHTML = `
+            <p class="secret-text" id="secretText">
+                ${secretSteps[secretStep]}
+            </p>
+            <button onclick="nextSecretStep()">Continue</button>
+        `;
+
+        const textEl = document.getElementById("secretText");
+
+        textEl.style.fontSize = secretSizes[secretStep] + "px";
+        textEl.style.transition = "font-size 0.6s ease";
+
+        return;
+    }
+
+    const img = secretImages[Math.floor(Math.random() * secretImages.length)];
+
+    el.innerHTML = `
+        <button onclick="location.reload()">Exit</button>
+    `;
+}
+
+function nextSecretStep() {
+    secretStep++;
+    renderSecretStep();
+}
+
+function startSecretMessage() {
+    const text = customText || "This part of the site is just for you... 💕";
+    const el = document.getElementById("secretMessage");
+
+    let i = 0;
+
+    function type() {
+        if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 40);
+        }
+    }
+
+    type();
+}
+
+function toggleLinks() {
+    const linksPanel = document.getElementById("linksPanel");
+    const favoritesPanel = document.getElementById("favoritesPanel");
+
+    const isOpening = linksPanel.style.display !== "flex";
+
+    if (isOpening) {
+        favoritesPanel.style.display = "none";
+    }
+
+    linksPanel.style.display = isOpening ? "flex" : "none";
+}
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker Registered"));
+}
+
+window.addEventListener("load", () => {
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const startBtn = document.getElementById("startStoryBtn");
+
+    if (startBtn) {
+        startBtn.addEventListener("click", startStory);
+    }
+});
+
+function startStory() {
+    document.getElementById("storyIntro").style.display = "none";
+    document.getElementById("storyBox").style.display = "block";
+}
+
+function showImageThenContinue(src, callback) {
+    const img = document.getElementById("storyImage");
+
+    img.src = src;
+    img.classList.add("show");
+
+    setTimeout(() => {
+        img.classList.remove("show");
+
+        setTimeout(() => {
+            callback();
+        }, 400);
+
+    }, 4000);
+}
+
+function choose(option) {
+    const choices = document.getElementById("storyChoices");
+
+    choices.innerHTML = "";
+
+    if (option === 1) {
+        showImageThenNext("IMG_1508.jpeg");
+    }
+
+    if (option === 2) {
+        showImageThenNextQuiet("F09BD3B8-C1F6-4C69-8DE7-CD4EE858DD3E.jpeg");
+    }
+}
+
+function showImageThenNext(src) {
+    const img = document.getElementById("storyImage");
+
+    img.src = src;
+    img.classList.add("show");
+
+    setTimeout(() => {
+        img.classList.remove("show");
+
+        setTimeout(() => {
+            nextSceneHandHold();
+        }, 400);
+
+    }, 3000);
+}
+
+function showImageThenNextQuiet(src) {
+    const img = document.getElementById("storyImage");
+
+    img.src = src;
+    img.classList.add("show");
+
+    setTimeout(() => {
+        img.classList.remove("show");
+
+        setTimeout(() => {
+            nextSceneQuiet();
+        }, 400);
+
+    }, 3000);
+}
+
+function nextSceneHandHold() {
+    const text = document.getElementById("storyText");
+    const choices = document.getElementById("storyChoices");
+
+    text.classList.add("fade-out");
+    choices.classList.add("fade-out");
+
+    setTimeout(() => {
+
+        text.textContent = "You squeeze my hand a little, and I smile. We keep walking... then I look over at you.";
+
+        choices.innerHTML = `
+            <button onclick="choose2(1)">Look back and smile</button>
+            <button onclick="choose2(2)">Look away shyly</button>
+        `;
+
+        text.classList.remove("fade-out");
+        choices.classList.remove("fade-out");
+
+        text.classList.add("slide-in");
+        choices.classList.add("slide-in");
+
+        setTimeout(() => {
+            text.classList.remove("slide-in");
+            choices.classList.remove("slide-in");
+        }, 500);
+
+    }, 400);
+}
+
+function nextSceneQuiet() {
+    const text = document.getElementById("storyText");
+    const choices = document.getElementById("storyChoices");
+
+    text.classList.add("fade-out");
+    choices.classList.add("fade-out");
+
+    setTimeout(() => {
+
+        text.textContent = "We walk in silence for a bit. I glance over at you, wondering what you're thinking... but I don't say anything either.";
+
+        choices.innerHTML = `
+            <button onclick="chooseQuiet2(1)">Break the silence</button>
+            <button onclick="chooseQuiet2(2)">Keep walking quietly</button>
+        `;
+
+        text.classList.remove("fade-out");
+        choices.classList.remove("fade-out");
+
+        text.classList.add("slide-in");
+        choices.classList.add("slide-in");
+
+        setTimeout(() => {
+            text.classList.remove("slide-in");
+            choices.classList.remove("slide-in");
+        }, 500);
+
+    }, 400);
+}
+
+function choose2(option) {
+    const text = document.getElementById("storyText");
+    const choices = document.getElementById("storyChoices");
+
+    choices.innerHTML = "";
+
+    if (option === 1) {
+        showImageThenContinue("IMG_3284.jpeg", () => {
+            text.textContent = "You smile at me, and I instantly smile back. I pull you a little closer.";
+            choices.innerHTML = `<button onclick="endStory()">Continue</button>`;
+        });
+    } else {
+        showImageThenContinue("IMG_4697.jpg", () => {
+            text.textContent = "You look away shyly. I laugh softly and bump into you.";
+            choices.innerHTML = `<button onclick="endStory()">Continue</button>`;
+        });
+    }
+}
+
+function chooseQuiet2(option) {
+    const text = document.getElementById("storyText");
+    const choices = document.getElementById("storyChoices");
+
+    choices.innerHTML = "";
+
+    text.classList.add("fade-out");
+
+    setTimeout(() => {
+
+        if (option === 1) {
+            text.textContent = "You finally say something, and I smile immediately.";
+        } else {
+            text.textContent = "We keep walking quietly… but it still feels perfect.";
+        }
+
+        choices.innerHTML = `<button onclick="endStory()">Continue</button>`;
+
+        text.classList.remove("fade-out");
+
+    }, 400);
+}
+
+function endStory() {
+    document.getElementById("storyText").textContent = "To be continued... 💕";
+    document.getElementById("storyChoices").innerHTML = "";
+}
+
+let cinematicMode = false;
+
+function toggleCinematic() {
+
+    cinematicMode = !cinematicMode;
+
+    document.body.classList.toggle("cinematic", cinematicMode);
+
+    const btn = document.getElementById("cinematicBtn");
+
+    if (cinematicMode) {
+        btn.textContent = "Exit Cinematic Mode";
+        enterCinematicEffects();
+    } else {
+        btn.textContent = "Cinematic Mode";
+        exitCinematicEffects();
+    }
+}
+
+document.addEventListener("click", (e) => {
+    const ripple = document.createElement("div");
+
+    ripple.style.position = "fixed";
+    ripple.style.left = e.clientX + "px";
+    ripple.style.top = e.clientY + "px";
+    ripple.style.width = "10px";
+    ripple.style.height = "10px";
+    ripple.style.borderRadius = "50%";
+    ripple.style.background = "white";
+    ripple.style.opacity = "0.4";
+    ripple.style.transform = "translate(-50%, -50%)";
+    ripple.style.transition = "0.6s ease";
+
+    document.body.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.style.width = "120px";
+        ripple.style.height = "120px";
+        ripple.style.opacity = "0";
+
+        setTimeout(() => ripple.remove(), 600);
+    }, 10);
+});
+
+let calc = "";
+
+function press(val) {
+    calc += val;
+    document.getElementById("calcDisplay").value = calc;
+}
+
+function calculate() {
+    try {
+        calc = eval(calc).toString();
+        document.getElementById("calcDisplay").value = calc;
+    } catch {
+        document.getElementById("calcDisplay").value = "Error";
+        calc = "";
+    }
+}
+
+function clearCalc() {
+    calc = "";
+    document.getElementById("calcDisplay").value = "";
+}
+
+let todos =
+    JSON.parse(localStorage.getItem("todos")) || [];
+
+function saveTodos() {
+
+    localStorage.setItem(
+        "todos",
+        JSON.stringify(todos)
+    );
+}
+
+function renderTodos() {
+
+    const list =
+        document.getElementById("todoList");
+
+    list.innerHTML = "";
+
+    todos.forEach((todo, index) => {
+
+        const div = document.createElement("div");
+
+        div.className =
+            "todo-item" +
+            (todo.completed ? " completed" : "");
+
+        div.innerHTML = `
+            <span>${todo.text}</span>
+
+            <div class="todo-buttons">
+
+                <button onclick="toggleTodo(${index})">
+                    ✓
+                </button>
+
+                <button onclick="deleteTodo(${index})">
+                    ✕
+                </button>
+
+            </div>
+        `;
+
+        list.appendChild(div);
+    });
+}
+
+
+
+function renderStats() {
+
+    const grid =
+        document.getElementById("statsGrid");
+
+    if (!grid) return;
+
+    grid.innerHTML = "";
+
+    stats.forEach(stat => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "stat-card";
+
+        card.innerHTML = `
+            <h3>${stat.label}</h3>
+            <p>${stat.compute()}</p>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+setInterval(renderStats, 1000);
+
+renderStats();
+
+function addTodo() {
+
+    const input =
+        document.getElementById("todoInput");
+
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    todos.push({
+        text,
+        completed: false
+    });
+
+    input.value = "";
+    saveTodos();
+    renderTodos();
+}
+
+function toggleTodo(index) {
+
+    todos[index].completed =
+        !todos[index].completed;
+    saveTodos();
+    renderTodos();
+}
+
+function deleteTodo(index) {
+
+    todos.splice(index, 1);
+    saveTodos();
+    renderTodos();
+}
+
+renderTodos();
+
+let idleTimer;
+
+function resetIdleTimer() {
+
+    clearTimeout(idleTimer);
+    document.body.classList.remove("idle");
+    idleTimer = setTimeout(() => {
+        document.body.classList.add("idle");
+        unlockAchievement("idleMaster");
+    }, 210000);
+
+}
+
+[
+    "mousemove",
+    "mousedown",
+    "keypress",
+    "touchstart",
+    "scroll"
+].forEach(event => {
+    document.addEventListener(event, resetIdleTimer);
+});
+
+const dvdLogo = document.getElementById("dvdLogo");
+
+let x = 100;
+let y = 100;
+let vx = 3;
+let vy = 2.5;
+
+function startDVD() {
+    
+    function animate() {
+        
+        const w = dvdLogo.offsetWidth;
+        const h = dvdLogo.offsetHeight;
+        const maxX = window.innerWidth - w;
+        const maxY = window.innerHeight - h;
+        x += vx;
+        y += vy;
+        if (x <= 0 || x >= maxX) {
+            vx *= -1;
+            x = Math.max(0, Math.min(x, maxX));
+        }
+        if (y <= 0 || y >= maxY) {
+            vy *= -1;
+            y = Math.max(0, Math.min(y, maxY));
+        }
+        dvdLogo.style.left = x + "px";
+        dvdLogo.style.top = y + "px";
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+window.addEventListener("load", () => {
+    startDVD();
+});
+
+const savedTheme =
+    localStorage.getItem("selectedTheme");
+
+if (savedTheme) {
+
+    currentTheme = "";
+
+    setTheme(savedTheme);
+}
+
+unlockAchievement("defaultTheme");
+setInterval(renderStats, 1000);
+resetIdleTimer();
+renderGrid();
+renderTimeline();
+renderFavorites();
+startSecretMessage("I love you more than you think... 💕");
+</script>
+
+<img id="storyImage" class="story-image" src="">
+
+</body>
+</html>
